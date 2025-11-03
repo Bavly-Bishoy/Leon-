@@ -1,0 +1,507 @@
+/* Start Variables */
+:root {
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+}
+/* End Variables */
+
+/*start global rules*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "work sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.padding-t-b {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+/*end global rules*/
+
+/* Start Components */
+.special-heading {
+  color: #ebeced;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -4px;
+  margin: 0;
+}
+
+.special-heading + p {
+  margin: -30px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: #797979;
+}
+/* End Components */
+
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 50px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+
+.parent {
+  background-color: #eee;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*small*/
+
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*Medium*/
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/*Large*/
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Start Header */
+.header {
+  padding: 20px;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+}
+
+.links {
+  position: relative;
+}
+
+.bur {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.links:hover .bur span:nth-child(2) {
+  width: 100%;
+}
+
+.bur span {
+  background-color: #333;
+  margin-bottom: 5px;
+}
+
+.bur span:first-child {
+  height: 2px;
+  width: 100%;
+}
+
+.bur span:nth-child(2) {
+  height: 2px;
+  width: 60%;
+  transition: 0.3s;
+}
+
+.bur span:last-child {
+  height: 2px;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+
+ul::before {
+  content: "";
+  border: 10px solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+}
+
+ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.links:hover ul {
+  display: block;
+}
+
+ul li a:hover {
+  padding-left: 25px;
+}
+ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+/* End Header */
+
+/* Start Landing Section */
+.landing {
+  background-image: url(../img/24867-white-mountain-wallpaper-top-free-white-mountain-background.jpg);
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+
+.landing .intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.landing .intro-text h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 50px;
+  color: var(--main-color);
+  text-align: center;
+}
+
+.landing .intro-text p {
+  font-size: 19px;
+  line-height: 1.8;
+  text-align: center;
+}
+/* End Landing Section */
+
+/* Start Features */
+.features {
+  background-color: #f6f6f6;
+}
+
+.features .feat {
+  padding: 20px;
+  text-align: center;
+}
+
+.features .feat:nth-child(2) {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features .feat i {
+  color: var(--main-color);
+}
+
+.features .feat h3 {
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.features .feat p {
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
+}
+/* End Features */
+
+/* Start Services */
+
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.services .services-content .col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.services .services-content .srv {
+  display: flex;
+  margin-bottom: 40px;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.services .services-content .srv i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+  flex: 1;
+}
+
+.services .services-content .srv h3 {
+  margin: 0 0 20px;
+}
+
+.services .services-content .srv p {
+  color: #777;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.services .services-content .image {
+  text-align: center;
+  position: relative;
+}
+
+.services .services-content .image::before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  width: 100px;
+  height: calc(100% + 100px);
+  top: -50px;
+  right: 0;
+  z-index: -1;
+}
+
+.services .services-content img {
+  width: 300px;
+  height: 400px;
+}
+
+@media (max-width: 1199px) {
+  .services .services-content .col:last-child {
+    display: none;
+  }
+}
+
+/* End Services */
+
+/* Start Portfolio */
+.portfolio {
+  background-color: #f6f6f6;
+}
+.portfolio .portfolio-content {
+  margin: 100px 0;
+}
+
+@media (max-width: 500px) {
+  .portfolio .portfolio-content {
+    margin: 0;
+  }
+}
+
+.portfolio .portfolio-content .card {
+  background-color: white;
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+  aspect-ratio: 1 /1;
+}
+
+.portfolio .portfolio-content .card .info {
+  padding: 20px;
+}
+.portfolio .portfolio-content .card .info h3 {
+  margin: 0;
+}
+.portfolio .portfolio-content .card .info p {
+  color: #777;
+  line-height: 1.8;
+}
+/* End Portfolio */
+
+/* Start About */
+.about-content {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-content .image {
+  position: relative;
+  width: 250px;
+  height: 375px;
+}
+
+.about-content .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-content .image::before {
+  content: "";
+  position: absolute;
+  background-color: #f6f6f6;
+  width: 100px;
+  height: 120%;
+  top: -10%;
+  left: -10px;
+  z-index: -1;
+}
+
+.about-content .image::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 70%;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  z-index: -1;
+  right: -160px;
+  top: -35px;
+}
+
+.about-content .text {
+  flex-basis: calc(100% - 500px);
+}
+
+.about-content .text p:first-of-type {
+  font-weight: bold;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.about-content .text hr {
+  width: 50%;
+  border-color: var(--main-color);
+  display: inline-block;
+}
+.about-content .text p:last-of-type {
+  line-height: 1.8;
+  color: #777;
+}
+
+@media (max-width: 991px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content .image::before {
+    width: 50px;
+  }
+  .about-content .image::after {
+    border-width: 40px;
+    width: 60px;
+    right: -80px;
+  }
+  .about-content .image {
+    margin: 0 auto 60px;
+  }
+}
+/* End About */
+
+/* Start Contact */
+.contact {
+  background-color: #fafafa;
+}
+
+.contact .info {
+  text-align: center;
+}
+
+.contact .info .label {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.contact .link {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-decoration: none;
+  text-transform: none;
+}
+
+.contact .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.contact .social i {
+  margin-left: 10px;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 767px) {
+  .contact .info .label,
+  .contact .link {
+    font-size: 20px;
+  }
+}
+
+/* End Contact */
+
+/* Start Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+footer span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+/* End Footer */
